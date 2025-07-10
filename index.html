@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gauteng Modern Pentathlon Laser Run Championships</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the app */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light gray background, keeps good contrast */
+            margin: 0;
+            padding-top: 64px; /* Space for fixed navbar */
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: #2d3748; /* Dark gray for general text */
+        }
+        .navbar {
+            background-color: #0f79b7; /* Primary Blue for navbar */
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .navbar-title {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .nav-links a {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: background-color 0.2s, transform 0.1s;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            background-color: #0b6094; /* Slightly darker blue for hover effect */
+            transform: translateY(-1px);
+        }
+        .section-container {
+            max-width: 900px;
+            margin: 32px auto;
+            background-color: #ffffff; /* White background for sections */
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 32px;
+            border: 1px solid #e2e8f0; /* Light border */
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #0f79b7; /* Primary Blue for section titles */
+            margin-bottom: 24px;
+            text-align: center;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0f79b7; /* Primary Blue underline */
+        }
+        .content-block {
+            margin-bottom: 24px;
+            padding: 16px;
+            background-color: #fff8e1; /* Very light yellow for content blocks */
+            border-left: 4px solid #0f79b7; /* Primary Blue left border */
+            border-radius: 8px;
+        }
+        .content-block h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #4a5568; /* Dark gray for subheadings */
+            margin-bottom: 12px;
+        }
+        .content-block p, .content-block ul {
+            font-size: 1.1rem;
+            color: #4a5568; /* Dark gray for text */
+        }
+        .content-block ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
+        }
+        .content-block ul li {
+            margin-bottom: 8px;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #0f79b7; /* Primary Blue for back to top button */
+            color: white;
+            padding: 12px 18px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            line-height: 1;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s, transform 0.1s;
+            z-index: 999;
+        }
+        .back-to-top:hover {
+            background-color: #0b6094; /* Darker blue on hover */
+            transform: translateY(-2px);
+        }
+        /* Specific text color adjustments based on new palette */
+        .text-blue-700-custom { /* Replaces text-indigo-700 */
+            color: #0f79b7; /* Primary blue for main invitation text */
+        }
+        .link-blue-custom { /* Primary blue for links */
+            color: #0f79b7;
+        }
+        .registration-closed-message {
+            display: block;
+            background-color: #fdcf00; /* Yellow for the message background */
+            color: #2d3748; /* Dark text for contrast on yellow */
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-align: center;
+            font-size: 1.25rem; /* Slightly larger font for prominence */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 24px; /* Space above the message */
+            margin-bottom: 24px; /* Space below the message */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links {
+                margin-top: 1rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-links a {
+                margin: 0.5rem;
+            }
+            .section-title {
+                font-size: 1.75rem;
+            }
+            .section-container {
+                padding: 20px;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-title">Laser Run Championships</div>
+            <div class="nav-links">
+                <a href="#invitation">Invitation</a>
+                <a href="#registration">Registration</a>
+                <a href="#rules">Rules</a>
+                <a href="#schedule">Schedule</a>
+                <a href="#other-info">Other Info</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="invitation" class="section-container">
+        <h1 class="section-title">Invitation</h1>
+        <div class="content-block">
+            <p class="text-xl font-semibold mb-4 text-center text-blue-700-custom">Gauteng Modern Pentathlon invites you to the:</p>
+            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-6">Laser Run Championships 2025</h2>
+            <p class="text-2xl text-center text-gray-700 mb-2"><strong>Date:</strong> Sunday, 13 July 2025</p>
+            <p class="text-2xl text-center text-gray-700 mb-4"><strong>Venue:</strong> Reddam House Helderfontein</p>
+            <p class="text-center">
+                <a href="https://www.google.com/maps/place/Reddam+House+Helderfontein/@-25.9667954,28.0163351,17z/data=!3m1!4b1!4m6!3m5!1s0x1e95669c3a3c2005:0xb9777265e31e5f8!8m2!3d-25.9667954!4d28.01891!16s%2Fg%2F1tf7w4y4?entry=ttu"
+                   target="_blank" class="link-blue-custom hover:underline text-lg font-semibold">
+                   Get Directions on Google Maps
+                </a>
+            </p>
+            <p class="text-lg text-center text-gray-600 mt-4">Join us for an exhilarating day of competition, showcasing precision shooting and dynamic running!</p>
+        </div>
+    </div>
+
+    <div id="registration" class="section-container">
+        <h1 class="section-title">Registration</h1>
+        <div class="content-block">
+            <h3>How to Register:</h3>
+            <p class="mb-4">Registrations for the Gauteng Modern Pentathlon Laser Run Championships are now closed as of <strong>10 July 2025</strong>.</p>
+            <div class="text-center">
+                <span class="registration-closed-message">Registrations Closed</span>
+            </div>
+            <p class="mt-4 mb-2"><strong>Registration Fee:</strong> R150 per participant.</p>
+            <p class="mb-4">
+                <strong>Payee: Gauteng Modern Pentathlon</strong><br>
+                <strong>Bank Details:</strong><br>
+                Account Type: Check Account<br>
+                Account Number: 80204943553<br>
+                Branch Code: 888000
+            </p>
+            <p class="mb-4">Ensure you have all necessary details ready, including emergency contact information.</p>
+            <!-- Categories section removed as requested -->
+        </div>
+        <div class="content-block">
+            <h3>Required Equipment:</h3>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Athletic running shoes</li>
+                <li>Comfortable sportswear</li>
+                <li>Laser pistol (Provincial pistols will be available for those who don't have their own)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="rules" class="section-container">
+        <h1 class="section-title">Rules</h1>
+        <div class="content-block">
+            <h3>Qualification Criteria:</h3>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Have completed at least 2 laser run events prior to this championship.</li>
+                <li>Be fully affiliated to SAMPA and the Province.</li>
+                <li>Register before the deadline of <strong>10 July 2025</strong>.</li>
+                <li>Pay the full registration fee of R150.</li>
+            </ul>
+            <p class="mt-4">Meeting these criteria is essential for participation in the championships.</p>
+        </div>
+        <div class="content-block">
+            <h3>General Laser Run Rules:</h3>
+            <p class="mb-4">The competition will adhere to the latest UIPM (Union Internationale de Pentathlon Moderne) Laser Run rules and regulations. Key aspects include:</p>
+            <ul class="list-disc list-inside space-y-2">
+                <li><strong>Shooting:</strong> Competitors must hit a target 5 times (or shoot for 50 seconds, whichever comes first) from a distance of 10 meters before proceeding to the run.</li>
+                <li><strong>Running:</strong> After each shooting series, participants will complete a designated running distance. The number of shooting series and running distances vary by age category.</li>
+                <li><strong>Equipment:</strong> Only approved laser pistols are permitted.</li>
+                <li><strong>Fair Play:</strong> All participants are expected to demonstrate sportsmanship and adherence to rules.</li>
+            </ul>
+            <p class="mt-4">A detailed rulebook can be requested via email or will be available at the event briefing.</p>
+        </div>
+        <div class="content-block">
+            <h3>Important Race Rules:</h3>
+            <ul class="list-disc list-inside space-y-2">
+                <li><strong>Lap Rule:</strong> The "lap rule" will be strictly enforced. Any runner who is lapped by the leading competitor in their heat will be eliminated from the race. This is for safety and to maintain race flow.</li>
+                <li><strong>Age Categories and Distances:</strong> Specific distances for running and number of shooting series will be confirmed based on UIPM guidelines closer to the event. Typically:</li>
+                <li><strong>Youth Categories:</strong> Shorter distances and fewer shooting series.</li>
+                <li><strong>Senior Categories:</strong> Longer distances (e.g., 5x 600m run with 5 shooting series).</li>
+            </ul>
+            <p class="mt-4">Detailed category information will be published on the registration form.</p>
+        </div>
+    </div>
+
+    <div id="schedule" class="section-container">
+        <h1 class="section-title">Provisional Schedule</h1>
+        <div class="content-block">
+            <p class="mb-4">This is a provisional schedule and is subject to change based on participant numbers and final arrangements. Please check back closer to the event date for the definitive schedule.</p>
+            <ul class="list-disc list-inside space-y-2">
+                <li><strong>07:30 - 08:30:</strong> Registration & Check-in</li>
+                <li><strong>08:30 - 09:00:</strong> Technical Briefing for all Athletes / Volunteer Training Session</li>
+                <li><strong>09:00 - 09:30:</strong> Pistol Control & Warm-up</li>
+                <li><strong>09:30 - 10:00:</strong> Opening Ceremony</li>
+                <li><strong>10:00 - After final heat:</strong> Competition Heats (Age categories will run as per Heat Sheets)</li>
+                <li><strong>15 Minutes after final heat:</strong> Medal Ceremony & Closing</li>
+            </ul>
+            <p class="mt-4">Specific heat times for each category will be communicated after registration closes.</p>
+        </div>
+    </div>
+
+    <div id="other-info" class="section-container">
+        <h1 class="section-title">Other Information</h1>
+        <div class="content-block">
+            <h3>Facilities & Amenities:</h3>
+            <ul class="list-disc list-inside space-y-2">
+                <li><strong>Parking:</strong> Ample parking will be available on-site at Reddam House Helderfontein.</li>
+                <li><strong>Food & Beverages:</strong> There will be a coffee truck available, and only light snacks will be provided. Athletes are responsible for providing their own nutrition for the event. Participants are encouraged to bring their own water bottles.</li>
+                <li><strong>First Aid:</strong> A qualified medical team will be on standby throughout the event.</li>
+                <li><strong>Restrooms:</strong> Accessible restrooms will be available.</li>
+            </ul>
+        </div>
+        <div class="content-block">
+            <h3>Spectators:</h3>
+            <p class="mb-4">Spectators are welcome to attend and support the athletes! Please be mindful of competition areas and follow instructions from event marshals.</p>
+        </div>
+        <div class="content-block">
+            <h3>Contact Information:</h3>
+            <p>For any queries regarding the event, please contact:</p>
+            <p><strong>Gauteng Modern Pentathlon Organising Committee</strong></p>
+            <p>Email: <a href="mailto:gautengvicechairman@sapentathlon.org.za" class="link-blue-custom hover:underline">gautengvicechairman@sapentathlon.org.za</a></p>
+        </div>
+    </div>
+
+    <a href="#" class="back-to-top" title="Back to Top">&#9650;</a>
+    <script>
+        // No specific JavaScript needed for static sections,
+        // as the content is displayed directly from HTML.
+    </script>
+</body>
+</html>
